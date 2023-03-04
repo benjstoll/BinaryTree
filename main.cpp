@@ -12,3 +12,26 @@ struct Node {
         next = NULL;
     }
 };
+
+
+// Insert node to the left
+void insert_node_left() {
+
+}
+
+
+// Insert node to the right
+void insert_node_left() {
+
+}
+
+
+// Print the contents of the tree
+void traverse_tree() {
+
+}
+
+
+int main() {
+    return 0;
+}
