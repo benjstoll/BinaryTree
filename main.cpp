@@ -23,6 +23,35 @@ Node* create_leaf(int data) {
 }
 
 
+// Print the contents of the tree in postorder traversal.
+void postorder_traverse(Node* node) {
+    if (node->left != NULL) {
+        postorder_traverse(node->left);
+    } 
+
+    if (node->right != NULL) {
+        postorder_traverse(node->right);
+    }
+
+    cout << node->data << endl;
+}
+
+
+// Print the contents of the tree in inorder traversal.
+void inorder_traverse(Node* node) {
+    if (node->left != NULL) {
+        inorder_traverse(node->left);
+    } 
+
+    cout << node->data << endl;
+
+    if (node->right != NULL) {
+        inorder_traverse(node->right);
+    }
+}
+
+
+
 // Print the contents of the tree in preorder traversal.
 void preorder_traverse(Node* node) {
     cout << node->data << endl;
@@ -47,7 +76,16 @@ int main() {
     root->left->left->left = create_leaf(3);
 
     // should print 1, 5, 2, 3, 4, 7, 9
+    cout << endl << "Pre order traversal:" << endl;
     preorder_traverse(root);
+
+    // should print 3, 2, 4, 5, 9, 7, 1
+    cout << endl << "Post order traversal:" << endl;
+    postorder_traverse(root);
+
+    // should print 3, 2, 5, 4, 1, 9, 7
+    cout << endl << "In order traversal:" << endl;
+    inorder_traverse(root);
 
     return 0;
 }
